@@ -15,7 +15,7 @@ jobs:
               run: cowsay -l
 
             - name: Exectung the thing CMD
-              run: cowsay -f dragon "good night stuff is boring rgt..." >> dragon.txt
+              run: cowsay -f duck "quack quack.. ppl alert.. runs away" >> dragon.txt
 
             - name: Read file
               run: cat dragon.txt
