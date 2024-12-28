@@ -12,7 +12,7 @@ jobs:
               run: sudo apt-get install cowsay -y
 
             - name: Exectung the thing CMD
-              run: cowsay -f dragon "Run for cover, I am a Dragon....RAWR" >> dragon.txt
+              run: cowsay -f eyes "good night stuff is boring rgt..." >> dragon.txt
 
             - name: Test fiel exists
               run: grep -i "dragon" dragon.txt
