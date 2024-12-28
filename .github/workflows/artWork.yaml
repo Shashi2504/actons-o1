@@ -15,10 +15,10 @@ jobs:
               run: cowsay -l
 
             - name: Exectung the thing CMD
-              run: cowsay -f snowman "maybe today is my christmas" >> snowman.txt
+              run: cowsay -f tux "maybe today is my christmas" >> tux.txt
 
             - name: Read file
-              run: cat snowman.txt
+              run: cat tux.txt
 
             - name: Check the files
               run: ls -ltra
