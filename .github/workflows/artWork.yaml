@@ -11,11 +11,14 @@ jobs:
             - name: Installing the package
               run: sudo apt-get install cowsay -y
 
+            - name: Listing all the animals
+              run: cowsay -l
+
             - name: Exectung the thing CMD
-              run: cowsay -f eyes "good night stuff is boring rgt..." >> dragon.txt
+              run: cowsay -f dragon "good night stuff is boring rgt..." >> dragon.txt
 
             - name: Test fiel exists
-              run: grep -i "eyes" dragon.txt
+              run: grep -i "dragon" dragon.txt
 
             - name: Read file
               run: cat dragon.txt
