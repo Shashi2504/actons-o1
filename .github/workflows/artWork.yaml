@@ -1,0 +1,24 @@
+name: Generating the art work
+on: push
+
+jobs:
+    artwork:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the code
+              uses: checkout@v4
+
+            - name: Installing the package
+              run: sudo apt-get install cowsay -y
+
+            - name: Exectung the thing CMD
+              run: cowsay -f dragon "Run for cover, I am a Dragon....RAWR" >> dragon.txt
+
+            - name: Test fiel exists
+              run: grep -i "dragon" dragon.txt
+
+            - name: Read file
+              run: cat dragon.txt
+
+            - name: Check the files
+              run: ls -ltra
