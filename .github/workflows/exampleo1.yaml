@@ -9,12 +9,12 @@ jobs:
 
             - name: Checking out the repo
               uses: actions/checkout@v4
-              
-            - name: Welcome to the workflow
-              run: echo "Hey keerthi!! try to understand nahhh"
 
-            - name: List the files
-              run: ls
-            
-            - name: Reading the contents...
-              run: cat README.md
+            - name: Talks
+              run: | 
+                echo "Hey keerthi!! it it boring for you the way I ask everytime"
+                ls -ltra
+                cat README.md
+
+            - name: Executing Third Party Library
+              run: cowsay -f dragon "Run for cover, I am a Dragon....RAWR" >> dragon.txt
