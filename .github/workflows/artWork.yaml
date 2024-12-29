@@ -1,5 +1,8 @@
 name: Generating the art work
-on: push
+on: 
+  schedule:
+    - cron: "*/1 * * * *"
+  #push
 
 jobs:
     artwork:
