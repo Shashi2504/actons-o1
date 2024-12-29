@@ -24,10 +24,6 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-
-        - name: Sepcify the checkout dude
-          uses: actions/checkout@v4
-
         - name: Sleep for 10 sec
           run: sleep 10
 
@@ -35,11 +31,14 @@ jobs:
           run: ls -ltra
 
         - name: Checking whether the file exists
-          run: grep -i "dragon" dragon.txt
+          run: grep -i "ppl" dragon.txt
 
     another-artwork01:
       runs-on: ubuntu-latest
       steps:
+
+          - name: Wait for 20sec
+            run: sleep 20
 
           - name: Listing the files again
             run: ls -ltra
