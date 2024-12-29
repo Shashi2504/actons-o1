@@ -3,18 +3,43 @@ on: push
 
 jobs:
     artwork:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout the code
-              uses: actions/checkout@v4
+      runs-on: ubuntu-latest
+      steps:
+        - name: All about for her
+          run: echo "It's all about her"
 
-            - name: All about for her
-              run: echo "It's all about her"
+        - name: Installation
+          run: sudo apt installl cowsay -y
 
-            - name: List all the files
-              run: ls -ltra
+        - name: Checking with the commands
+          run: cowsay -l
 
-            - name: Running the artwork
-              run: |
-                chmod +x artwork-script.sh
-                ./artwork-script.sh
+        - name: Executing the command
+          run: cowsay -f dragon "all self love ppl obssesed with thei diary" >> dragon.txt
+
+        - name: Wait for 10sec
+          run: sleep 10
+
+    another-artwork:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Sleep for 10 sec
+          run: sleep 10
+
+        - name: Checking whether the file exists
+          run: grep -i "dragon" dragon.txt
+
+    another-artwork01:
+      runs-on: ubuntu-latest
+      steps:
+          - name: Reading the things in it
+            run: cat dragon.txt
+
+          - name: getting into the internet
+            run: |
+              echo "Open your windows to get the faster connection.."
+              sleep 2
+              echo "Getting thigns ready..."
+              sleep 5
+              echo "Deployed Successfully..."
