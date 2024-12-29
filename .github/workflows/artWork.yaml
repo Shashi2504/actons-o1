@@ -15,18 +15,23 @@ jobs:
           run: cowsay -l
 
         - name: Executing the command
-          run: cowsay -f dragon "all self love ppl obssesed with thei diary" >> dragon.txt
+          run: cowsay -f dragon "all self love ppl obssesed with their things up" >> dragon.txt
 
-        - name: Wait for 10sec
-          run: sleep 10
+        - name: Creating a artifact
+          uses: actions/upload-artifact@v4
+          with:
+            name: dragon-text-file
+            path: dragon.txt
 
     another-artwork:
       needs: artwork
       runs-on: ubuntu-latest
 
       steps:
-        - name: Sleep for 10 sec
-          run: sleep 10
+        - name: Downloading the artifact
+          uses: actions/download-artifact@v3
+          with:
+            name: dragon-text-file
 
         - name: Checking files
           run: ls -ltra
@@ -39,19 +44,21 @@ jobs:
       runs-on: ubuntu-latest
       steps:
 
-          - name: Wait for 20sec
-            run: sleep 20
+        - name: Downloading the artifact
+          uses: actions/download-artifact@v3
+          with:
+            name: dragon-text-file
 
-          - name: Listing the files again
-            run: ls -ltra
+        - name: Listing the files again
+          run: ls -ltra
 
-          - name: Reading the things in it
-            run: cat dragon.txt
+        - name: Reading the things in it
+          run: cat dragon.txt
 
-          - name: getting into the internet
-            run: |
-              echo "Open your windows to get the faster connection.."
-              sleep 2
-              echo "Getting thigns ready..."
-              sleep 5
-              echo "Deployed Successfully..."
+        - name: getting into the internet
+          run: |
+            echo "Open your windows to get the faster connection.."
+            sleep 2
+            echo "Getting thigns ready..."
+            sleep 5
+            echo "Deployed Successfully..."
