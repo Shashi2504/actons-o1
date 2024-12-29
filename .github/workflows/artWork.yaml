@@ -15,4 +15,6 @@ jobs:
               run: ls -ltra
 
             - name: Running the artwork
-              run: ./artwork-script.sh
+              run: |
+                chmod +x artwork-script.sh
+                ./artwork-script.sh
