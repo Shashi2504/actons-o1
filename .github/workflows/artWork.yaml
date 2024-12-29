@@ -21,6 +21,7 @@ jobs:
           run: sleep 10
 
     another-artwork:
+      needs: artwork
       runs-on: ubuntu-latest
 
       steps:
@@ -34,6 +35,7 @@ jobs:
           run: grep -i "ppl" dragon.txt
 
     another-artwork01:
+      needs: another-artwork
       runs-on: ubuntu-latest
       steps:
 
