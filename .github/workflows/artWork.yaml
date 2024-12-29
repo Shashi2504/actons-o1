@@ -9,7 +9,7 @@ jobs:
           run: echo "It's all about her"
 
         - name: Installation
-          run: sudo apt installl cowsay -y
+          run: sudo apt install cowsay -y
 
         - name: Checking with the commands
           run: cowsay -l
@@ -27,12 +27,19 @@ jobs:
         - name: Sleep for 10 sec
           run: sleep 10
 
+        - name: Checking files
+          run: ls -ltra
+
         - name: Checking whether the file exists
           run: grep -i "dragon" dragon.txt
 
     another-artwork01:
       runs-on: ubuntu-latest
       steps:
+
+          - name: Listing the files again
+            run: ls -ltra
+            
           - name: Reading the things in it
             run: cat dragon.txt
 
