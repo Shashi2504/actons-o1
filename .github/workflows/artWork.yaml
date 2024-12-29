@@ -24,6 +24,10 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
+
+        - name: Sepcify the checkout dude
+          uses: action/checkout@v4
+
         - name: Sleep for 10 sec
           run: sleep 10
 
@@ -39,7 +43,7 @@ jobs:
 
           - name: Listing the files again
             run: ls -ltra
-            
+
           - name: Reading the things in it
             run: cat dragon.txt
 
