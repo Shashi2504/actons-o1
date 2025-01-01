@@ -26,3 +26,7 @@ jobs:
         env:
           SECRET_CONTEXT: ${{ toJson(secrets) }}
         run: echo "$SECRET_CONTEXT"
+      - name: Server URL
+        env:
+          SERVER_CONTEXT: ${{ toJson(github.server_url) }}
+        run: echo "$SERVER_CONTEXT"
